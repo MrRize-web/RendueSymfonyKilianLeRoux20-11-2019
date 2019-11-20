@@ -41,6 +41,27 @@ class ProduitController extends AbstractController
         $formulaire=$this->createForm(ProduitType::Class, $Produit);//créer un formulaire vide
 
         $formulaire->handleRequest($request);
+        
+    /* if (strlen($EAN)== 14){
+        $EAN[13]=array($EAN[1]*3,$EAN[2],$EAN[3]*3,$EAN[4],$EAN[5]*3,$EAN[6],$EAN[7]*3,$EAN[8],$EAN[9]*3,$EAN[10],$EAN[11]*3,$EAN[12],$EAN[13]*3);
+        $total=$EAN[14]*10; 
+        $calule=$EAN[1]+$EAN[2]+$EAN[3]+$EAN[4]+$EAN[5]+$EAN[6]+$EAN[7]+$EAN[8]+$EAN[9]+$EAN[10]+$EAN[11]+$EAN[12]+$EAN[13];
+        var_dump ("EAN 14 =="+$calule);
+        var_dump ("EAN 14 =="+$total);
+        $dif=$toal-$calule;
+        $dif==$EAN[14];
+
+        if (strlen($EAN)== 13){
+            $EAN[12]=array($EAN[1]*3,$EAN[2],$EAN[3]*3,$EAN[4],$EAN[5]*3,$EAN[6],$EAN[7]*3,$EAN[8],$EAN[9]*3,$EAN[10],$EAN[11]*3,$EAN[12]);
+            $total=$EAN[14]*10; 
+            $calule=$EAN[1]+$EAN[2]+$EAN[3]+$EAN[4]+$EAN[5]+$EAN[6]+$EAN[7]+$EAN[8]+$EAN[9]+$EAN[10]+$EAN[11]+$EAN[12]+$EAN[13];
+            var_dump ("EAN 13 =="+$calule);
+            var_dump ("EAN 13 =="+$total);
+            $dif=$toal-$calule;
+            $dif==$EAN[14];
+        }
+     }*/
+    
 
         if ($formulaire->isSubmitted() && $formulaire->isValid()){
             //recuperation de l'entity manager
